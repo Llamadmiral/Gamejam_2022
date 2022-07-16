@@ -36,12 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\InventoryScript.cs" />
-     <Compile Include="Assets\Scripts\Square.cs" />
-     <Compile Include="Assets\Scripts\TestSquareGroup.cs" />
      <Compile Include="Assets\ClickMe.cs" />
      <Compile Include="Assets\Scripts\RayCastScript.cs" />
+     <Compile Include="Assets\Scripts\Square.cs" />
+     <Compile Include="Assets\Scripts\InventoryScript.cs" />
+     <Compile Include="Assets\Scripts\TestSquareGroup.cs" />
+     <Compile Include="Assets\Scripts\interfaces\ISnapTarget.cs" />
      <Compile Include="Assets\Scripts\interfaces\IDraggableObject.cs" />
+     <Compile Include="Assets\Scripts\TileProperty.cs" />
+     <Compile Include="Assets\Scripts\TestTileSpawner.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\MovementDrawer.cs" />
+     <Compile Include="Assets\Scripts\interfaces\IMouseOverDraggable.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Programs\Unity\Editor\2021.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

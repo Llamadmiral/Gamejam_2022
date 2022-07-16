@@ -19,11 +19,10 @@ public class TestSquareGroup : MonoBehaviour, IDraggableObject
         PolygonCollider2D polygonCollider = GetComponent<PolygonCollider2D>();
         polygonCollider.SetPath(0, new List<Vector2>());
         List<Vector2> path = new List<Vector2>();
-        path.Add(new Vector2(-0.5f, 0f));
-        path.Add(new Vector2(4.5f, 0.5f));
-        path.Add(new Vector2(4.5f, -0.5f));
         path.Add(new Vector2(-0.5f, -0.5f));
-        Debug.Log(string.Join(", ", path));
+        path.Add(new Vector2(4.5f, -0.5f));
+        path.Add(new Vector2(4.5f, 0.5f));
+        path.Add(new Vector2(-0.5f, 0.5f));
         polygonCollider.SetPath(0, path.ToArray());
 
     }
@@ -31,6 +30,22 @@ public class TestSquareGroup : MonoBehaviour, IDraggableObject
     public void onDrag(Vector3 mouseOffset)
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseOffset;
+        rearrangeChildren();
+    }
+
+    public void snapToTarget(Vector2 target)
+    {
+        transform.position = new Vector3(target.x, target.y, 0);
+        rearrangeChildren();
+    }
+
+    public Vector3 getPosition()
+    {
+        return transform.position;
+    }
+
+    private void rearrangeChildren()
+    {
         for (int i = 0; i < squares.Count; i++)
         {
             GameObject square = squares[i];

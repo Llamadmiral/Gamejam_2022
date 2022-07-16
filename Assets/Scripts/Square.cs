@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Square : MonoBehaviour
 {
-    // Update is called once per frame
+
+    public void Start()
+    {
+        SpriteRenderer renderer = transform.GetComponent<SpriteRenderer>();
+        renderer.sortingOrder = 1;
+    }
+
     void Update()
     {
 
