@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RayCastScript : MonoBehaviour
 {
+
+    private static readonly Logger LOG = new Logger(typeof(RayCastScript));
     private GameObject selectedObject;
     private IDraggableObject draggableObject;
     private IMouseOverDraggable mouseOverDraggable;
@@ -18,6 +20,7 @@ public class RayCastScript : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (MouseButtonDownDrag(mousePosition))
         {
+            LOG.Log("Found for dragging");
             draggableObject = selectedObject.GetComponent<IDraggableObject>();
             if (draggableObject == null)
             {
@@ -26,14 +29,17 @@ public class RayCastScript : MonoBehaviour
         }
         else if (draggableObject == null && MouseOverButtonDrag(mousePosition))
         {
+            LOG.Log("Found for mouse over drag");
             mouseOverDraggable = selectedObject.GetComponent<IMouseOverDraggable>();
         }
         if (draggableObject != null)
         {
+            LOG.Log("Found draggable object, calling OnDrag()");
             draggableObject.onDrag(offset);
         }
         else if (mouseOverDraggable != null)
         {
+            LOG.Log("Found mouse over draggable object, calling OnDrag()");
             mouseOverDraggable.onDrag();
         }
         if (Input.GetMouseButtonUp(0) && selectedObject != null)
@@ -80,7 +86,7 @@ public class RayCastScript : MonoBehaviour
 
     public void ReleaseMouseOverDraggableLogic()
     {
-        Debug.Log("Called");
+        LOG.Log("ReleaseMouseOverDraggableLogic called!");
         GameObject.FindWithTag("GameManager").GetComponent<GameManager>().startMovement();
     }
 
@@ -93,7 +99,7 @@ public class RayCastScript : MonoBehaviour
             if (obj != null)
             {
                 ISnapTarget snapTarget = obj.GetComponent<ISnapTarget>();
-                if (snapTarget != null)
+                if (snapTarget != null && snapTarget.Accept(draggableObject.GetType()))
                 {
                     Vector2 target = snapTarget.provideSnapTarget(draggableObject.getPosition());
                     draggableObject.snapToTarget(target);

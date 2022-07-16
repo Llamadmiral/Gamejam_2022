@@ -48,7 +48,6 @@ public class MovementDrawer : MonoBehaviour
                     if (System.Math.Abs(newPoint.x - lastPoint.x) + System.Math.Abs(newPoint.y - lastPoint.y) == 1)
                     {
                         Add(newPoint);
-                        Debug.Log("Added new point!");
                     }
                 }
                 else

@@ -13,6 +13,7 @@ public class TestSquareGroup : MonoBehaviour, IDraggableObject
         {
             GameObject children = Instantiate(squarePrefab);
             children.transform.position = transform.position + new Vector3(1 * i, 0, 0);
+            children.transform.parent = transform;
             squares.Add(children);
         }
 
