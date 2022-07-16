@@ -13,7 +13,6 @@ public class LockInModifierUI : MonoBehaviour
 
     public void OnButtonPress()
     {
-        Debug.Log("Clicked!");
         manager.LockInChoices();
         gameObject.SetActive(false);
     }

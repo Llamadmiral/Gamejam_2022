@@ -5,6 +5,8 @@ using UnityEngine;
 public class InventoryManager : AbstractSnapTarget
 {
 
+    private static readonly Logger LOG = new Logger(typeof(InventoryManager));
+
     private List<Vector2> gridCenterPoints = new List<Vector2>();
     void Awake()
     {
@@ -23,12 +25,11 @@ public class InventoryManager : AbstractSnapTarget
     void Update()
     {
         Vector3 cameraPosition = Camera.main.transform.position;
-        transform.position = new Vector3(cameraPosition.x + 12, cameraPosition.y - 6, 0);
+        //transform.position = new Vector3(cameraPosition.x + 11, cameraPosition.y - 5, 0);
     }
 
     public void addDice(Dice dice)
     {
-        Debug.Log(gridCenterPoints.Count);
         Vector2 pos = gridCenterPoints[dice.id];
         dice.transform.position = new Vector3(pos.x, pos.y, 0);
     }

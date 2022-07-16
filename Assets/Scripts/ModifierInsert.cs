@@ -5,20 +5,12 @@ using UnityEngine;
 public class ModifierInsert : AbstractSnapTarget
 {
     public GameObject icon;
-    public Sprite iconSprite;
     public ModifierType modifierType;
 
     public List<Dice> attachedDice = new List<Dice>();
 
     public void Start()
     {
-        icon = new GameObject();
-        icon.transform.position = transform.position + new Vector3(0, 1.5f, 0);
-        icon.AddComponent<SpriteRenderer>();
-        SpriteRenderer spriteRenderer = icon.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = iconSprite;
-        spriteRenderer.sortingOrder = 32;
-
         gameObject.AddComponent<BoxCollider2D>();
     }
 
@@ -48,13 +40,11 @@ public class ModifierInsert : AbstractSnapTarget
 
     public void Disable()
     {
-        icon.SetActive(false);
         gameObject.SetActive(false);
     }
 
     public void Enable()
     {
-        icon.SetActive(true);
         gameObject.SetActive(true);
     }
 

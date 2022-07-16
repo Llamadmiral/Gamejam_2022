@@ -20,7 +20,6 @@ public class RayCastScript : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (MouseButtonDownDrag(mousePosition))
         {
-            LOG.Log("Found for dragging");
             draggableObject = selectedObject.GetComponent<IDraggableObject>();
             if (draggableObject == null)
             {
@@ -29,7 +28,6 @@ public class RayCastScript : MonoBehaviour
         }
         else if (draggableObject == null && MouseOverButtonDrag(mousePosition))
         {
-            LOG.Log("Found for mouse over drag");
             mouseOverDraggable = selectedObject.GetComponent<IMouseOverDraggable>();
         }
         if (draggableObject != null)

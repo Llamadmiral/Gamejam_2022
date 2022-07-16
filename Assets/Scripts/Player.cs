@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IMouseOverDraggable
 {
-    private GameManager manager;
 
-    private bool dragged = false;
+    private static readonly Logger LOG = new Logger(typeof(Player));
+
+    private GameManager manager;
 
     private Queue<Vector3> pendingMovement = new Queue<Vector3>();
 
@@ -35,11 +36,9 @@ public class Player : MonoBehaviour, IMouseOverDraggable
 
     public void onDrag()
     {
-        if (!dragged)
-        {
-            manager.movementDrawer.startFromPlayer = true;
-            manager.movementDrawer.addMovementPoint(transform.position);
-        }
+        LOG.Log("OnDrag() called on player!");
+        manager.movementDrawer.startFromPlayer = true;
+        manager.movementDrawer.addMovementPoint(transform.position);
     }
 
     public void move(List<Vector3> points)

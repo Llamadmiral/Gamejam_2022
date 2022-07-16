@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     public TestTileSpawner testTileSpawner;
-    public GameObject playerPrefab;
-    private Player player;
+    public Player player;
     private bool tested = false;
 
     public MovementDrawer movementDrawer;
@@ -20,10 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void spawnPlayer()
     {
-        GameObject playerObject = Instantiate(playerPrefab);
-        player = playerObject.GetComponent<Player>();
-        player.transform.position = new Vector3(0, 0, 0);
-        playerObject.transform.parent = gameObject.transform;
+        player.transform.position = new Vector3(0, 0, -1);
     }
 
     public void startMovement()
