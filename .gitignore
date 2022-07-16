@@ -3,3 +3,5 @@
 *Packages/*
 *UserSettings/*
 *Temp/*
+.vsconfig
+*ProjectSettings/ProjectVersion.txt
