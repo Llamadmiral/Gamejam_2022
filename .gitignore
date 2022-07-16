@@ -4,4 +4,4 @@
 *UserSettings/*
 *Temp/*
 .vsconfig
-*ProjectSettings/ProjectVersion.txt
+*ProjectSettings/*.txt
