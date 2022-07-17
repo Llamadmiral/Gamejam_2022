@@ -25,13 +25,17 @@ public class InventoryManager : AbstractSnapTarget
     void Update()
     {
         Vector3 cameraPosition = Camera.main.transform.position;
-        //transform.position = new Vector3(cameraPosition.x + 11, cameraPosition.y - 5, 0);
     }
 
     public void addDice(Dice dice)
     {
         Vector2 pos = gridCenterPoints[dice.id];
         dice.transform.position = new Vector3(pos.x, pos.y, 0);
+    }
+
+    public void GetDices()
+    {
+
     }
 
     public override List<Vector2> GetGridCenterPoints()

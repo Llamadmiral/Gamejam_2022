@@ -5,15 +5,15 @@ using UnityEngine;
 public class LockInModifierUI : MonoBehaviour
 {
 
-    ModifierInsertManager manager;
+    GameManager gameManager;
     public void Start()
     {
-        manager = GameObject.FindWithTag("ModifierInsertManager").GetComponent<ModifierInsertManager>();
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
     public void OnButtonPress()
     {
-        manager.LockInChoices();
+        gameManager.modifierInsertManager.LockInChoices();
         gameObject.SetActive(false);
     }
 }

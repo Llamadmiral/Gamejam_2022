@@ -649,6 +649,8 @@ MonoBehaviour:
   draggableDicePrefab: {fileID: 8595768084621298187, guid: e392ae07e3087e3498c2cafdae241fb1, type: 3}
   inserts: []
   draggableDices: []
+  gameManager: {fileID: 0}
+  logEnabled: 0
 --- !u!1001 &477103726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -670,7 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 677886035111164033, guid: 6069fc3fb3cc4ea4cb047df708b1cf7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 677886035111164033, guid: 6069fc3fb3cc4ea4cb047df708b1cf7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -738,6 +740,9 @@ MonoBehaviour:
   testTileSpawner: {fileID: 1028935878}
   player: {fileID: 779756390}
   movementDrawer: {fileID: 1326806780}
+  diceManager: {fileID: 1683618043}
+  inventoryManager: {fileID: 1431159264}
+  modifierInsertManager: {fileID: 413498669}
 --- !u!4 &492262903
 Transform:
   m_ObjectHideFlags: 0
@@ -876,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dcfc5bf495e6424ea2c59dc6c1ca78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logEnabled: 0
 --- !u!1 &561674606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1194,8 @@ MonoBehaviour:
   bottomMLeft: {fileID: 1142884633441389517, guid: dfb955917abae9544a364723502017bc, type: 3}
   bottomMMiddle: {fileID: 1142884633441389517, guid: 2e167cac5d2db294f8448bc4d8260c64, type: 3}
   bottomMRight: {fileID: 1142884633441389517, guid: c828f8272439b6246bcbcddf1e09c909, type: 3}
+  width: 28
+  height: 7
 --- !u!4 &1028935879
 Transform:
   m_ObjectHideFlags: 0
@@ -1234,6 +1242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startFromPlayer: 0
+  logEnabled: 0
 --- !u!4 &1326806781
 Transform:
   m_ObjectHideFlags: 0
@@ -1361,7 +1370,7 @@ GameObject:
   - component: {fileID: 1431159260}
   - component: {fileID: 1431159263}
   m_Layer: 0
-  m_Name: Invetory
+  m_Name: InventoryManager
   m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1543,3 +1552,5 @@ MonoBehaviour:
   - {fileID: -1037786115, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: -1404953657, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   dicePrefab: {fileID: 5008307551557872029, guid: 867170de9db8c0d488a95311f96314ba, type: 3}
+  gameManager: {fileID: 0}
+  logEnabled: 0

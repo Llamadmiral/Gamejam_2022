@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class MovementDrawer : MonoBehaviour
 {
-    private List<Vector3> points;
+
+    private static readonly Logger LOG = new Logger(typeof(MovementDrawer));
+    private List<Vector3> points = new List<Vector3>();
     private LineRenderer lr;
 
     private bool locked = false;
     public bool startFromPlayer = false;
 
+    public bool logEnabled;
+
     public void Start()
     {
-        points = new List<Vector3>();
+        LOG.enabled = logEnabled;
         transform.position = transform.parent.transform.position;
         lr = transform.GetComponent<LineRenderer>();
         lr.sortingOrder = 20;
@@ -23,6 +27,7 @@ public class MovementDrawer : MonoBehaviour
 
     public void addMovementPoint(Vector3 newPoint)
     {
+        LOG.Log("Considering point: " + newPoint);
         if (startFromPlayer)
         {
             locked = true;
@@ -45,9 +50,14 @@ public class MovementDrawer : MonoBehaviour
                 if (equalityIndex == -1)
                 {
                     Vector3 lastPoint = points[points.Count - 1];
-                    if (System.Math.Abs(newPoint.x - lastPoint.x) + System.Math.Abs(newPoint.y - lastPoint.y) == 1)
+                    int distance = (int)(System.Math.Abs(newPoint.x - lastPoint.x) + System.Math.Abs(newPoint.y - lastPoint.y));
+                    if (distance == 1)
                     {
                         Add(newPoint);
+                    }
+                    else
+                    {
+                        LOG.Log("Not adding point, because it is further away than one tile! Last tile: " + lastPoint + ", current tile: " + newPoint + ", distance: " + distance);
                     }
                 }
                 else

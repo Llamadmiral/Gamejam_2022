@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class DiceManager : MonoBehaviour
 {
+
+    private static readonly Logger LOG = new Logger(typeof(DiceManager));
     public Dice[] dices = new Dice[24];
     public Sprite[] sprites = new Sprite[24];
 
     public Dice dicePrefab;
 
-    public void Start()
+    public GameManager gameManager;
+
+    public bool logEnabled;
+
+    public void Awake()
     {
-        InventoryManager inventory = GameObject.FindWithTag("Inventory").GetComponent<InventoryManager>();
+        LOG.enabled = logEnabled;
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         for (int i = 0; i < sprites.Length; i++)
         {
             Dice dice = Instantiate(dicePrefab);
@@ -19,7 +26,9 @@ public class DiceManager : MonoBehaviour
             dice.value = (i / 4) + 1;
             dice.SetSprite(sprites[i]);
             dice.transform.parent = transform;
-            inventory.addDice(dice);
+            dices[i] = dice;
+            LOG.Log("Dice created: " + dice);
+            gameManager.inventoryManager.addDice(dice);
         }
     }
 }

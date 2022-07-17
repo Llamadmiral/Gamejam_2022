@@ -13,8 +13,11 @@ public class Player : MonoBehaviour, IMouseOverDraggable
 
     private int moveCooldown = 0;
 
-    void Start()
+    public bool logEnabled;
+
+    public void Start()
     {
+        LOG.enabled = logEnabled;
         SpriteRenderer spriteRenderer = transform.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = 10;
         manager = transform.parent.GetComponent<GameManager>();
@@ -25,7 +28,7 @@ public class Player : MonoBehaviour, IMouseOverDraggable
         if (pendingMovement.Count > 0 && moveCooldown == 0)
         {
             Vector3 nextMove = pendingMovement.Dequeue();
-            transform.position = nextMove;
+            transform.position = new Vector3(nextMove.x, nextMove.y, 1);
             moveCooldown = 15;
         }
         if (moveCooldown > 0)

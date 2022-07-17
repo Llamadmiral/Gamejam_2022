@@ -9,11 +9,13 @@ public class RayCastScript : MonoBehaviour
     private GameObject selectedObject;
     private IDraggableObject draggableObject;
     private IMouseOverDraggable mouseOverDraggable;
-    Vector3 offset;
+    private Vector3 offset;
 
+    public bool logEnabled;
     public void Start()
     {
         Application.targetFrameRate = 60;
+        LOG.enabled = logEnabled;
     }
     void Update()
     {
@@ -71,8 +73,25 @@ public class RayCastScript : MonoBehaviour
         bool foundTarget = false;
         if (pressed)
         {
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
-            if (targetObject)
+            GameObject targetObject = null;
+            Collider2D[] results = Physics2D.OverlapPointAll(mousePosition);
+            if (results.Length > 0)
+            {
+                targetObject = results[0].gameObject;
+                float maxZ = targetObject.transform.position.z;
+                for (int i = 1; i < results.Length; i++)
+                {
+                    GameObject gameObject = results[i].gameObject;
+                    float z = gameObject.transform.position.z;
+                    LOG.Log("Considering: " + gameObject + ", with Z: " + z);
+                    if (z > maxZ)
+                    {
+                        maxZ = z;
+                        targetObject = gameObject;
+                    }
+                }
+            }
+            if (targetObject != null)
             {
                 selectedObject = targetObject.transform.gameObject;
                 foundTarget = true;

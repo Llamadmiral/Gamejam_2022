@@ -5,7 +5,7 @@ public class Logger
 {
 
     private System.Type type;
-    public bool disabled = false;
+    public bool enabled = true;
     public Logger(System.Type type)
     {
         this.type = type;
@@ -13,7 +13,7 @@ public class Logger
 
     public void Log(string msg)
     {
-        if (!disabled)
+        if (enabled)
         {
             Debug.Log(type.Name + ": " + msg);
         }
