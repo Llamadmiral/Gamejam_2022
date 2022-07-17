@@ -6,7 +6,7 @@ public class ModifierInsert : AbstractSnapTarget
 {
     public ModifierType modifierType;
     private List<Vector2> gridPoints = new List<Vector2>();
-    private List<DraggableDice> slots = new List<DraggableDice>();
+    protected List<DraggableDice> slots = new List<DraggableDice>();
     public void Start()
     {
         gameObject.AddComponent<BoxCollider2D>();
@@ -14,10 +14,10 @@ public class ModifierInsert : AbstractSnapTarget
 
     public void InitGridPoints()
     {
+        gridPoints.Add(new Vector2(transform.position.x - 0.5F, transform.position.y + 0.5F));
+        gridPoints.Add(new Vector2(transform.position.x + 0.5F, transform.position.y + 0.5F));
         gridPoints.Add(new Vector2(transform.position.x - 0.5F, transform.position.y - 0.5F));
         gridPoints.Add(new Vector2(transform.position.x + 0.5F, transform.position.y - 0.5F));
-        gridPoints.Add(new Vector2(transform.position.x + 0.5F, transform.position.y + 0.5F));
-        gridPoints.Add(new Vector2(transform.position.x - 0.5F, transform.position.y + 0.5F));
     }
 
     public override List<Vector2> GetGridCenterPoints()

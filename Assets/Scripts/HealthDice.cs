@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HealthDice : DraggableDice
 {
+    private static readonly Logger LOG = new Logger(typeof(HealthDice));
     public Sprite[] sprites = new Sprite[6];
 
     private SpriteRenderer renderer;
-
     public void Awake()
     {
         renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -24,6 +24,20 @@ public class HealthDice : DraggableDice
         {
             renderer.sprite = null;
         }
+    }
+
+    public void SetLog(bool value)
+    {
+        LOG.enabled = value;
+    }
+
+    public int Damage(int amount)
+    {
+        int oldValue = this.value;
+        int newValue = System.Math.Max(0, this.value - amount);
+        SetValue(newValue);
+        LOG.Log(string.Format("Damaged with {0} from {1} to {2}", amount, oldValue, newValue));
+        return oldValue - newValue;
     }
 
     public override void OnDrag(Vector3 mouseOffset)

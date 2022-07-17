@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 
     public TileManager testTileSpawner;
     public Player player;
-    private bool tested = false;
     public DiceManager diceManager;
     public InventoryManager inventoryManager;
     public ModifierInsertManager modifierInsertManager;
@@ -33,6 +32,11 @@ public class GameManager : MonoBehaviour
         List<Vector3> movementPoints = movementManager.GetFinalMovement();
         player.move(movementPoints);
         movementManager.clear();
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        modifierInsertManager.healthInsert.Damage(damage);
     }
 
 }
