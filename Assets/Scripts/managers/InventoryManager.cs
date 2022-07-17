@@ -33,11 +33,6 @@ public class InventoryManager : AbstractSnapTarget
         dice.transform.position = new Vector3(pos.x, pos.y, 0);
     }
 
-    public void GetDices()
-    {
-
-    }
-
     public override List<Vector2> GetGridCenterPoints()
     {
         return gridCenterPoints;

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour, IMouseOverDraggable
 
     private static readonly Logger LOG = new Logger(typeof(Player));
 
-    private GameManager manager;
+    public GameManager gameManager;
 
     private Queue<Vector3> pendingMovement = new Queue<Vector3>();
 
@@ -20,7 +20,6 @@ public class Player : MonoBehaviour, IMouseOverDraggable
         LOG.enabled = logEnabled;
         SpriteRenderer spriteRenderer = transform.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = 10;
-        manager = transform.parent.GetComponent<GameManager>();
     }
 
     public void Update()
@@ -40,8 +39,8 @@ public class Player : MonoBehaviour, IMouseOverDraggable
     public void onDrag()
     {
         LOG.Log("OnDrag() called on player!");
-        manager.movementDrawer.startFromPlayer = true;
-        manager.movementDrawer.addMovementPoint(transform.position);
+        gameManager.movementManager.startFromPlayer = true;
+        gameManager.movementManager.addMovementPoint(transform.position);
     }
 
     public void move(List<Vector3> points)

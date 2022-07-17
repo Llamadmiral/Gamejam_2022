@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class ModifierInsert : AbstractSnapTarget
 {
-    public GameObject icon;
     public ModifierType modifierType;
-
-    public List<Dice> attachedDice = new List<Dice>();
-
+    private List<Vector2> gridPoints = new List<Vector2>();
+    private List<DraggableDice> slots = new List<DraggableDice>();
     public void Start()
     {
         gameObject.AddComponent<BoxCollider2D>();
     }
 
+    public void InitGridPoints()
+    {
+        gridPoints.Add(new Vector2(transform.position.x - 0.5F, transform.position.y - 0.5F));
+        gridPoints.Add(new Vector2(transform.position.x + 0.5F, transform.position.y - 0.5F));
+        gridPoints.Add(new Vector2(transform.position.x + 0.5F, transform.position.y + 0.5F));
+        gridPoints.Add(new Vector2(transform.position.x - 0.5F, transform.position.y + 0.5F));
+    }
+
     public override List<Vector2> GetGridCenterPoints()
     {
-        List<Vector2> points = new List<Vector2>();
-        points.Add(new Vector2(transform.position.x - 0.5F, transform.position.y - 0.5F));
-        points.Add(new Vector2(transform.position.x + 0.5F, transform.position.y - 0.5F));
-        points.Add(new Vector2(transform.position.x + 0.5F, transform.position.y + 0.5F));
-        points.Add(new Vector2(transform.position.x - 0.5F, transform.position.y + 0.5F));
-        return points;
+        return gridPoints;
     }
 
     public override void OnSnap(GameObject attachedObject)
     {
-        Dice comp = attachedObject.GetComponent<Dice>();
-        if (comp != null && !attachedDice.Contains(comp))
+        DraggableDice comp = attachedObject.GetComponent<DraggableDice>();
+        if (comp != null)
         {
-            attachedDice.Add(comp);
+            slots.Add(comp);
         }
     }
 
@@ -48,6 +49,21 @@ public class ModifierInsert : AbstractSnapTarget
         gameObject.SetActive(true);
     }
 
+    public void AddDice(DraggableDice draggableDice)
+    {
+        if (slots.Count == 0)
+        {
+            Vector2 pos = gridPoints[0];
+            slots.Add(draggableDice);
+            draggableDice.transform.position = new Vector3(pos.x, pos.y, 1);
+        }
+        else
+        {
+            Vector2 pos = gridPoints[slots.Count];
+            draggableDice.transform.position = new Vector3(pos.x, pos.y, 1);
+            slots.Add(draggableDice);
+        }
+    }
 
 }
 
@@ -57,5 +73,6 @@ public enum ModifierType
 {
     MOVEMENT,
     ATTACK,
-    DEFENSE
+    DEFENSE,
+    HEALTH
 }

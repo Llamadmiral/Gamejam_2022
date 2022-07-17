@@ -42,7 +42,6 @@
      <Compile Include="Assets\Scripts\managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\managers\TileManager.cs" />
      <Compile Include="Assets\Scripts\RayCastScript.cs" />
-     <Compile Include="Assets\Scripts\MovementDrawer.cs" />
      <Compile Include="Assets\Scripts\ModifierInsert.cs" />
      <Compile Include="Assets\Scripts\managers\DiceManager.cs" />
      <Compile Include="Assets\Scripts\Square.cs" />
@@ -57,6 +56,9 @@
      <Compile Include="Assets\Scripts\DraggableDice.cs" />
      <Compile Include="Assets\Scripts\Logger.cs" />
      <Compile Include="Assets\Scripts\interfaces\IDraggableObject.cs" />
+     <Compile Include="Assets\Scripts\managers\MovementManager.cs" />
+     <Compile Include="Assets\Scripts\HealthModifierInsert.cs" />
+     <Compile Include="Assets\Scripts\HealthDice.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

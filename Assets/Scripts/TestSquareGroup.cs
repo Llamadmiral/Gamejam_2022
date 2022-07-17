@@ -28,7 +28,7 @@ public class TestSquareGroup : MonoBehaviour, IDraggableObject
 
     }
 
-    public void onDrag(Vector3 mouseOffset)
+    public void OnDrag(Vector3 mouseOffset)
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseOffset;
         rearrangeChildren();

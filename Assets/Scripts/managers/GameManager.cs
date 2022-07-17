@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     public TileManager testTileSpawner;
     public Player player;
     private bool tested = false;
-    public MovementDrawer movementDrawer;
     public DiceManager diceManager;
     public InventoryManager inventoryManager;
     public ModifierInsertManager modifierInsertManager;
     public TileManager tileManager;
+    public MovementManager movementManager;
     void Start()
     {
         gameObject.tag = "GameManager";
@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
 
     public void startMovement()
     {
-        List<Vector3> movementPoints = movementDrawer.GetFinalMovement();
+        List<Vector3> movementPoints = movementManager.GetFinalMovement();
         player.move(movementPoints);
-        movementDrawer.clear();
+        movementManager.clear();
     }
 
 }

@@ -9,55 +9,37 @@ public class ModifierInsertManager : MonoBehaviour
     public ModifierInsert movementInsert;
     public ModifierInsert attakcInsert;
     public ModifierInsert defenseInsert;
+    public HealthModifierInsert healthInsert;
     public GameObject greyscreen;
-
     public GameObject draggableDicePrefab;
-
     public List<ModifierInsert> inserts = new List<ModifierInsert>();
-
     public List<DraggableDice> draggableDices = new List<DraggableDice>();
-
     public GameManager gameManager;
-
     private bool active = true;
 
     public bool logEnabled;
     public void Start()
     {
         LOG.enabled = logEnabled;
-        setupInsert(movementInsert);
-        setupInsert(attakcInsert);
-        setupInsert(defenseInsert);
-        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        SetupInsert(movementInsert);
+        SetupInsert(attakcInsert);
+        SetupInsert(defenseInsert);
+        SetupInsert(healthInsert);
+        healthInsert.InitHealthDices();
         RollDices();
     }
 
-    private void setupInsert(ModifierInsert insertPrefab)
+    private void SetupInsert(ModifierInsert insert)
     {
-        ModifierInsert insert = Instantiate(insertPrefab);
         insert.gameObject.SetActive(true);
-        insert.transform.position = new Vector3(-9 + inserts.Count * 8, 5, 0);
-        insert.transform.parent = transform;
+        insert.transform.position = new Vector3(-13 + inserts.Count * 4, -7, 0);
+        insert.InitGridPoints();
         inserts.Add(insert);
     }
 
     public void LockInChoices()
     {
-        HideElements();
         greyscreen.SetActive(false);
-    }
-
-    public void HideElements()
-    {
-        foreach (ModifierInsert insert in inserts)
-        {
-            insert.Disable();
-        }
-        foreach (DraggableDice draggableDice in draggableDices)
-        {
-            Object.DestroyImmediate(draggableDice.gameObject);
-        }
-        draggableDices.Clear();
     }
 
     public void RollDices()
@@ -73,7 +55,7 @@ public class ModifierInsertManager : MonoBehaviour
             {
                 rolledDices.Add(rolledDice.id);
                 DraggableDice draggableDice = Instantiate(draggableDicePrefab).GetComponent<DraggableDice>();
-                draggableDice.transform.position = new Vector3(-12 + i * 2, -7, 0);
+                draggableDice.transform.position = new Vector3(-12 + i * 2, -7, 1);
                 draggableDice.transform.parent = transform;
                 SpriteRenderer renderer = draggableDice.gameObject.GetComponent<SpriteRenderer>();
                 renderer.sprite = rolledDice.sprite;

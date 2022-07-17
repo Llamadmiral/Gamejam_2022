@@ -35,7 +35,7 @@ public class RayCastScript : MonoBehaviour
         if (draggableObject != null)
         {
             LOG.Log("Found draggable object, calling OnDrag()");
-            draggableObject.onDrag(offset);
+            draggableObject.OnDrag(offset);
         }
         else if (mouseOverDraggable != null)
         {

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementDrawer : MonoBehaviour
+public class MovementManager : MonoBehaviour
 {
 
-    private static readonly Logger LOG = new Logger(typeof(MovementDrawer));
+    private static readonly Logger LOG = new Logger(typeof(MovementManager));
     private List<Vector3> points = new List<Vector3>();
     private LineRenderer lr;
 
@@ -57,7 +57,11 @@ public class MovementDrawer : MonoBehaviour
                     }
                     else
                     {
-                        LOG.Log("Not adding point, because it is further away than one tile! Last tile: " + lastPoint + ", current tile: " + newPoint + ", distance: " + distance);
+                        LOG.Log(
+                            "Not adding point, because it is further away than one tile! Last tile: " + lastPoint
+                        + ", current tile: " + newPoint
+                        + ", distance: " + distance
+                        );
                     }
                 }
                 else

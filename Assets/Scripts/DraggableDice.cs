@@ -10,7 +10,7 @@ public class DraggableDice : MonoBehaviour, IDraggableObject
     {
         return transform.position;
     }
-    public void onDrag(Vector3 mouseOffset)
+    public virtual void OnDrag(Vector3 mouseOffset)
     {
         Vector3 result = Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseOffset;
         transform.position = new Vector3(result.x, result.y, 1);

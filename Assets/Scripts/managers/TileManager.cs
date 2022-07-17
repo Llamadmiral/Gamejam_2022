@@ -60,7 +60,7 @@ public class TileManager : MonoBehaviour
 
     public void addMovementPoint(Vector3 point)
     {
-        gameManager.movementDrawer.addMovementPoint(point);
+        gameManager.movementManager.addMovementPoint(point);
     }
 
     public List<Tile> GetWalkableTiles()
