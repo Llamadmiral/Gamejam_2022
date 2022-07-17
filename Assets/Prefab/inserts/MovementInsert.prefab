@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  iconSprite: {fileID: 416770832, guid: 5b0a5754f4e3b96439abb1a00bec4eaf, type: 3}
   modifierType: 0
   attachedDice: []
 --- !u!212 &9159840348134408526
@@ -90,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 31
-  m_Sprite: {fileID: 21300000, guid: cbaf1fab51e66304585259d71daf0181, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa240b6910acbe46a6f9c566ba1cad8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

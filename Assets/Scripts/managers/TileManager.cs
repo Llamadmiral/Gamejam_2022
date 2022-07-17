@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    public GameObject tileWalkable;
-    public GameObject leftWall;
-    public GameObject middleWall;
-    public GameObject rightWall;
-    public GameObject bottomLeftWall;
-    public GameObject bottomRightWall;
-    public GameObject bottomLeftRepeatable;
-    public GameObject bottomRightRepeatable;
-    public GameObject bottomMLeft;
-    public GameObject bottomMMiddle;
-    public GameObject bottomMRight;
-
+    public Tile tileWalkable;
+    public Tile leftWall;
+    public Tile middleWall;
+    public Tile rightWall;
+    public Tile bottomLeftWall;
+    public Tile bottomRightWall;
+    public Tile bottomLeftRepeatable;
+    public Tile bottomRightRepeatable;
+    public Tile bottomMLeft;
+    public Tile bottomMMiddle;
+    public Tile bottomMRight;
     public int width;
     public int height;
-
-    public Dictionary<Vector3, TileProperty> tilemap = new Dictionary<Vector3, TileProperty>();
+    public Dictionary<Vector3, Tile> tilemap = new Dictionary<Vector3, Tile>();
     private GameManager gameManager;
 
     public void Start()
@@ -34,10 +32,10 @@ public class TileManager : MonoBehaviour
         for (int x = 0; x < width; x++)
         {
 
-            SpawnTileAt(Instantiate(middleWall), position + new Vector3(x, height + 1.5f, 0));
             if (x > 0 && x < width - 1)
             {
                 SpawnTileAt(Instantiate(bottomMMiddle), position + new Vector3(x, -1, 0));
+                SpawnTileAt(Instantiate(middleWall), position + new Vector3(x, height + 1.5f, 0));
             }
             for (int y = 0; y < height; y++)
             {
@@ -65,10 +63,25 @@ public class TileManager : MonoBehaviour
         gameManager.movementDrawer.addMovementPoint(point);
     }
 
-    private void SpawnTileAt(GameObject tile, Vector3 target)
+    public List<Tile> GetWalkableTiles()
     {
-        tile.transform.position = target + new Vector3(-13.5f, 0, 0);
+        List<Tile> tiles = new List<Tile>();
+        foreach (var item in tilemap)
+        {
+            Tile tile = item.Value;
+            if (tile.walkable)
+            {
+                tiles.Add(tile);
+            }
+        }
+        return tiles;
+    }
+
+    private void SpawnTileAt(Tile tile, Vector3 target)
+    {
+        tile.transform.position = target + new Vector3(-13.5f, 0.5f, 0);
         tile.transform.parent = transform;
+        tilemap.Add(target, tile);
     }
 
 }

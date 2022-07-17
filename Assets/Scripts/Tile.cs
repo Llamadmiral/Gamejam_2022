@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileProperty : MonoBehaviour, IMouseOverDraggable
+public class Tile : MonoBehaviour, IMouseOverDraggable
 {
     public bool walkable;
 

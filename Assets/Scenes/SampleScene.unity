@@ -289,7 +289,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &303212155
 PrefabInstance:
@@ -743,6 +743,7 @@ MonoBehaviour:
   diceManager: {fileID: 1683618043}
   inventoryManager: {fileID: 1431159264}
   modifierInsertManager: {fileID: 413498669}
+  tileManager: {fileID: 1028935878}
 --- !u!4 &492262903
 Transform:
   m_ObjectHideFlags: 0
@@ -759,8 +760,10 @@ Transform:
   - {fileID: 413498668}
   - {fileID: 303212156}
   - {fileID: 779756387}
+  - {fileID: 1028935879}
+  - {fileID: 1431159261}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1165,7 +1168,7 @@ GameObject:
   - component: {fileID: 1028935879}
   - component: {fileID: 1028935878}
   m_Layer: 0
-  m_Name: TestTileSpawner
+  m_Name: TileManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1183,19 +1186,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0693426609c0b9145b7d269557966dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileWalkable: {fileID: 7532809250089957352, guid: 6119020f523978a428606a38157383d3, type: 3}
-  leftWall: {fileID: 1142884633441389517, guid: 32e3f3b38ad947c45889679f0ab07417, type: 3}
-  middleWall: {fileID: 1142884633441389517, guid: 5aee3bdfef92d154f9d857d0413f83c8, type: 3}
-  rightWall: {fileID: 1142884633441389517, guid: e36d0e6bee24b2146a044070e72499c9, type: 3}
-  bottomLeftWall: {fileID: 1142884633441389517, guid: f47fe595cfb1e924b9befe2184c95e2a, type: 3}
-  bottomRightWall: {fileID: 1142884633441389517, guid: 69e5c5487320f35438190a78fa52b8f5, type: 3}
-  bottomLeftRepeatable: {fileID: 1142884633441389517, guid: 5d81bcb3b4254224ab3395cc71722f6d, type: 3}
-  bottomRightRepeatable: {fileID: 1142884633441389517, guid: 007c3be0589635448822c1eb8218a758, type: 3}
-  bottomMLeft: {fileID: 1142884633441389517, guid: dfb955917abae9544a364723502017bc, type: 3}
-  bottomMMiddle: {fileID: 1142884633441389517, guid: 2e167cac5d2db294f8448bc4d8260c64, type: 3}
-  bottomMRight: {fileID: 1142884633441389517, guid: c828f8272439b6246bcbcddf1e09c909, type: 3}
+  tileWalkable: {fileID: -9174043098808580442, guid: 6119020f523978a428606a38157383d3, type: 3}
+  leftWall: {fileID: 1197226872399447195, guid: 32e3f3b38ad947c45889679f0ab07417, type: 3}
+  middleWall: {fileID: 1197226872399447195, guid: 5aee3bdfef92d154f9d857d0413f83c8, type: 3}
+  rightWall: {fileID: 1197226872399447195, guid: e36d0e6bee24b2146a044070e72499c9, type: 3}
+  bottomLeftWall: {fileID: 1197226872399447195, guid: f47fe595cfb1e924b9befe2184c95e2a, type: 3}
+  bottomRightWall: {fileID: 1197226872399447195, guid: 69e5c5487320f35438190a78fa52b8f5, type: 3}
+  bottomLeftRepeatable: {fileID: 1197226872399447195, guid: 5d81bcb3b4254224ab3395cc71722f6d, type: 3}
+  bottomRightRepeatable: {fileID: 1197226872399447195, guid: 007c3be0589635448822c1eb8218a758, type: 3}
+  bottomMLeft: {fileID: 1197226872399447195, guid: dfb955917abae9544a364723502017bc, type: 3}
+  bottomMMiddle: {fileID: 1197226872399447195, guid: 2e167cac5d2db294f8448bc4d8260c64, type: 3}
+  bottomMRight: {fileID: 1197226872399447195, guid: c828f8272439b6246bcbcddf1e09c909, type: 3}
   width: 28
-  height: 7
+  height: 5
 --- !u!4 &1028935879
 Transform:
   m_ObjectHideFlags: 0
@@ -1203,13 +1206,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028935877}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.09338242, y: 1.3106676, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 492262903}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1326806779
 GameObject:
@@ -1435,13 +1438,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431159259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5, y: -5.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.593383, y: -4.1893325, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 492262903}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1431159263
 PolygonCollider2D:

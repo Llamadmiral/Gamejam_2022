@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public Player player;
     private bool tested = false;
     public MovementDrawer movementDrawer;
-
     public DiceManager diceManager;
     public InventoryManager inventoryManager;
     public ModifierInsertManager modifierInsertManager;
@@ -23,7 +22,10 @@ public class GameManager : MonoBehaviour
 
     private void spawnPlayer()
     {
-        player.transform.position = new Vector3(0, 0, 1);
+        List<Tile> tiles = tileManager.GetWalkableTiles();
+        Tile spawnTile = tiles[Random.Range(0, tiles.Count)];
+        Vector3 pos = spawnTile.gameObject.transform.position;
+        player.transform.position = new Vector3(pos.x, pos.y, 1);
     }
 
     public void startMovement()

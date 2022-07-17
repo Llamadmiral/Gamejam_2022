@@ -52,7 +52,7 @@
      <Compile Include="Assets\Scripts\managers\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\abstracts\AbstractSnapTarget.cs" />
      <Compile Include="Assets\Scripts\TestSquareGroup.cs" />
-     <Compile Include="Assets\Scripts\TileProperty.cs" />
+     <Compile Include="Assets\Scripts\Tile.cs" />
      <Compile Include="Assets\Scripts\interfaces\ISnapTarget.cs" />
      <Compile Include="Assets\Scripts\DraggableDice.cs" />
      <Compile Include="Assets\Scripts\Logger.cs" />
