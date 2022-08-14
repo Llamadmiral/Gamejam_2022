@@ -21,8 +21,10 @@ public class MovementManager : MonoBehaviour
         lr = transform.GetComponent<LineRenderer>();
         lr.sortingOrder = 20;
         lr.sortingLayerName = "LineRenderer";
-        lr.SetColors(Color.red, Color.red);
-        lr.SetWidth(0.1f, 0.1f);
+        lr.startColor = Color.red;
+        lr.endColor = Color.red;
+        lr.startWidth = 0.1f;
+        lr.endWidth = 0.1f;
     }
 
     public void addMovementPoint(Vector3 newPoint)

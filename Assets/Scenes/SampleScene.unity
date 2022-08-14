@@ -705,6 +705,7 @@ Transform:
   - {fileID: 407281665}
   - {fileID: 2104926617}
   - {fileID: 677345383}
+  - {fileID: 1516932581}
   m_Father: {fileID: 492262903}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -724,10 +725,9 @@ MonoBehaviour:
   attakcInsert: {fileID: 1044516487}
   defenseInsert: {fileID: 2104926618}
   healthInsert: {fileID: 677345384}
+  diceLandingInsert: {fileID: 1516932582}
   greyscreen: {fileID: 561674606}
-  draggableDicePrefab: {fileID: 8595768084621298187, guid: e392ae07e3087e3498c2cafdae241fb1, type: 3}
   inserts: []
-  draggableDices: []
   gameManager: {fileID: 492262902}
   logEnabled: 0
 --- !u!1001 &477103726
@@ -1113,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8927979297229869950, guid: 13e115b6216a0114f852ebdc7e35ef61, type: 3}
       propertyPath: logEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8927979297229869950, guid: 13e115b6216a0114f852ebdc7e35ef61, type: 3}
       propertyPath: healthDicePrefab
@@ -1197,7 +1197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &811127390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1875,6 +1875,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36aafafa8e3eb5f4bb0ac746d6b2aadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1516932580
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 413498668}
+    m_Modifications:
+    - target: {fileID: -7545054395139941974, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7545054395139941974, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: -7545054395139941974, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cb2a5a47cb255d45a7a23ea52350c9f, type: 3}
+    - target: {fileID: -7545054395139941974, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823233569688156169, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_Name
+      value: DiceLandingInsert
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09338242
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3106676
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.065745026
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442326316511574143, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: logEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442326316511574143, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 492262902}
+    - target: {fileID: 6442326316511574143, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+      propertyPath: draggableDicePrefab
+      value: 
+      objectReference: {fileID: 8595768084621298187, guid: e392ae07e3087e3498c2cafdae241fb1, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+--- !u!4 &1516932581 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5712282586130963386, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+  m_PrefabInstance: {fileID: 1516932580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1516932582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6442326316511574143, guid: ad0a2ba0b3904094daede1d465f16cff, type: 3}
+  m_PrefabInstance: {fileID: 1516932580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962bb82fc9904c9409e8b4ea01bb1388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683618042 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3742331979416147260, guid: eaa32b0012486184684f6155219ad80a, type: 3}
@@ -1922,26 +2023,26 @@ MonoBehaviour:
   - {fileID: 1249297884, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: 32271249, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: -1394690826, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: 339120057, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: -553155771, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: -1152124901, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: -1738205563, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: -188264136, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: 1015251176, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: 1363400922, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: 38245748, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: 888756370, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: 502755061, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: 694053698, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: -1237260776, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: 656255654, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: -1356905279, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: 143911881, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
-  - {fileID: 554705230, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: -1089043183, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: -193463589, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: -1037786115, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   - {fileID: -1404953657, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: 1594556192, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: 1347799032, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: 2115323328, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: 1682051702, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: 364690367, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: -456738266, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: -1574911718, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: 1551593003, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: -1562145062, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: -98375505, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: -755973264, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
+  - {fileID: -102504772, guid: dc9eca07ac20b2641b7e9ae2a4b46d61, type: 3}
   dicePrefab: {fileID: 5008307551557872029, guid: 867170de9db8c0d488a95311f96314ba, type: 3}
   gameManager: {fileID: 0}
   logEnabled: 0

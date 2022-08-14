@@ -7,10 +7,10 @@ public class HealthDice : DraggableDice
     private static readonly Logger LOG = new Logger(typeof(HealthDice));
     public Sprite[] sprites = new Sprite[6];
 
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
     public void Awake()
     {
-        renderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     public void SetValue(int value)
@@ -18,11 +18,11 @@ public class HealthDice : DraggableDice
         this.value = value;
         if (value != 0)
         {
-            renderer.sprite = sprites[this.value - 1];
+            spriteRenderer.sprite = sprites[this.value - 1];
         }
         else
         {
-            renderer.sprite = null;
+            spriteRenderer.sprite = null;
         }
     }
 

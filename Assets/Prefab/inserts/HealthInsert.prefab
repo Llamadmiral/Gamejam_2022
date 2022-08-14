@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 31
-  m_Sprite: {fileID: 21300000, guid: cbaf1fab51e66304585259d71daf0181, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7e70eeea6e28fb46a82c66b0734d3c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,3 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierType: 4
   healthDicePrefab: {fileID: 5188093783418768872, guid: dfeda92801d24fa46904a0b26ef2edc6, type: 3}
+  health: 24
+  logEnabled: 0
+  damage: 0

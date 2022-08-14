@@ -14,7 +14,7 @@ public class HealthModifierInsert : ModifierInsert
 
     public int damage;
 
-    public void Start()
+    public new void Start()
     {
         LOG.enabled = logEnabled;
     }
