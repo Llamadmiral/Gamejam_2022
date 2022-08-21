@@ -52,8 +52,9 @@ public class MovementManager : MonoBehaviour
                 if (equalityIndex == -1)
                 {
                     Vector3 lastPoint = points[points.Count - 1];
-                    int distance = (int)(System.Math.Abs(newPoint.x - lastPoint.x) + System.Math.Abs(newPoint.y - lastPoint.y));
-                    if (distance == 1)
+                    int distanceX = (int)System.Math.Round(System.Math.Abs(newPoint.x - lastPoint.x));
+                    int distanceY = (int)System.Math.Round(System.Math.Abs(newPoint.y - lastPoint.y));
+                    if (distanceX + distanceY == 1)
                     {
                         Add(newPoint);
                     }
@@ -62,7 +63,7 @@ public class MovementManager : MonoBehaviour
                         LOG.Log(
                             "Not adding point, because it is further away than one tile! Last tile: " + lastPoint
                         + ", current tile: " + newPoint
-                        + ", distance: " + distance
+                        + ", distance: " + distanceX + ":" + distanceY
                         );
                     }
                 }

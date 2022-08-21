@@ -23,4 +23,9 @@ public class Logger
     {
         Log(msg.ToString());
     }
+
+    public void Log(float f)
+    {
+        Log(f.ToString());
+    }
 }
