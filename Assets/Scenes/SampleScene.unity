@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startFromPlayer: 0
-  logEnabled: 0
+  logEnabled: 1
 --- !u!4 &1326806781
 Transform:
   m_ObjectHideFlags: 0
